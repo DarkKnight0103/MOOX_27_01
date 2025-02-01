@@ -58,6 +58,7 @@ export default {
       },
       fontSize: {
         'xxs': '0.8rem',
+        'customTitle': '16px'
       },
       maxWidth: {
         '8xl': '84rem', // Custom max width of 800px

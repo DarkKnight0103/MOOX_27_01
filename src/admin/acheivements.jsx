@@ -23,7 +23,7 @@ const AchievementsManagement = () => {
         if (!file) return null;
 
         const options = {
-            maxSizeMB: 0.05, // 50KB = 0.05MB
+            maxSizeMB: 0.25, // 50KB = 0.05MB
             maxWidthOrHeight: 1024,
             useWebWorker: true,
         };

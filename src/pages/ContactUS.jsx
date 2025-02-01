@@ -163,7 +163,7 @@ const ContactUs = () => {
           data-aos="fade-down"
           data-aos-duration="1500"
         >
-          <ol className="flex flex-wrap space-x-2 md:space-x-4 text-sm md:text-base text-white">
+          {/* <ol className="flex flex-wrap space-x-2 md:space-x-4 text-sm md:text-base text-white">
             <li>
               <a href="/" className="hover:text-[#785322]">
                 Home
@@ -175,7 +175,7 @@ const ContactUs = () => {
                 Contact Us
               </a>
             </li>
-          </ol>
+          </ol> */}
         </nav>
 
         {/* Contact Form Section */}

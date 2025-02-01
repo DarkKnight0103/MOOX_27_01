@@ -38,7 +38,7 @@ const Gallery = () => {
           data-aos="fade-down"
           data-aos-duration="2000"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-white font-parkin">Gallery</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white font-parkin">Event Gallery</h1>
           <p className="text-lg md:text-xl mt-2 opacity-0 animate-fadeIn">Amazing moments captured to remember</p>
         </div>
 

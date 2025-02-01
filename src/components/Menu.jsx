@@ -165,56 +165,73 @@
 
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { Menu as MenuIcon, X } from "lucide-react";
 
 const Menu = () => {
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const menuItems = [
     { name: "Home", link: "/" },
     { name: "About Us", link: "/about" },
     { name: "Services", link: "/services" },
+    { name: "Event Gallery", link: "/gallery" },
     { name: "Blogs", link: "/events" },
-    { name: "Gallery", link: "/gallery" },
     { name: "Career", link: "/career" },
     { name: "Contact", link: "/contact" },
   ];
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
   return (
-    <nav
-      className={`relative z-50 w-full transition-all duration-300 bg-white h-20`}
-    >
+    <nav className="relative z-50 w-full transition-all duration-300 bg-white h-20">
       <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8">
         <div className="h-full flex justify-between items-center">
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <MenuIcon size={24} />
+          </button>
+
           {/* Logo */}
-          <div className="flex-shrink-0 text-2xl font-bold text-[#1a2a47]">
-              {/* <img
-                src="/logo.png"
-                alt="Logo"
-                className="h-12 w-auto"
-                style={{
-                  filter: "drop-shadow(0 0px 6px rgba(0, 0, 0, 0.1))",
-                }}
-              /> */}
+          <Link to="/" className="flex-shrink-0">
+            <div className="flex-shrink-0 text-2xl md:-ml-28 font-bold text-[#1a2a47]">
               MOOX EVENTS PVT. LTD.
-          </div>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 uppercase">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.link}
-                className={`text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200 font-medium ${
-                  location.pathname === item.link ? "text-[#d6af53]" : ""
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div className="hidden md:flex items-center -mr-28 space-x-8 uppercase">
+            <div className="space-x-8 pr-28">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.link}
+                  className={`text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200 font-medium ${
+                    location.pathname === item.link ? "text-[#d6af53]" : ""
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-4 ml-8 border-l pl-8 border-gray-200">
+            <div className="flex items-center space-x-4 border-l pl-8 border-gray-200">
+              <a
+                href="http://wa.me//+918866258585"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200"
+              >
+                <FaWhatsapp size={24} />
+              </a>
               <a
                 href="https://www.instagram.com/mooxevents/"
                 target="_blank"
@@ -230,6 +247,92 @@ const Menu = () => {
                 className="text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200"
               >
                 <FaFacebook size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/moox-events"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200"
+              >
+                <FaLinkedin size={24} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="p-4">
+          {/* Close Button */}
+          <button
+            className="absolute top-4 right-4 text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <X size={24} />
+          </button>
+
+          {/* Mobile Menu Items */}
+          <div className="mt-8 flex flex-col space-y-4">
+            {menuItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.link}
+                className={`text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200 font-medium ${
+                  location.pathname === item.link ? "text-[#d6af53]" : ""
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Social Links */}
+          <div className="mt-8 pt-4 border-t border-gray-200">
+            <div className="flex items-center space-x-4">
+              <a
+                href="http://wa.me//+918866258585"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200"
+              >
+                <FaWhatsapp size={24} />
+              </a>
+              <a
+                href="https://www.instagram.com/mooxevents/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200"
+              >
+                <FaInstagram size={24} />
+              </a>
+              <a
+                href="https://www.facebook.com/mooxevents/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200"
+              >
+                <FaFacebook size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/moox-events"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1a2a47] hover:text-[#d6af53] transition-colors duration-200"
+              >
+                <FaLinkedin size={24} />
               </a>
             </div>
           </div>

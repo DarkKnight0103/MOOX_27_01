@@ -21,7 +21,7 @@ const VisionMission = () => {
               Our Vision
             </h2>
             <p className="text-gray-600 text-center transform transition-all duration-500 group-hover:scale-105">
-              To become the leading event management company in India, known for creating extraordinary experiences that exceed expectations.
+            Transforming ordinary events into extraordinary experiences through innovative and personalized event solutions.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ const VisionMission = () => {
               Our Mission
             </h2>
             <p className="text-gray-600 text-center transform transition-all duration-500 group-hover:scale-105">
-              To deliver exceptional event experiences by combining creativity, precision, and personalized service.
+            Redefining event organization by providing exceptional, tailored event planning and management services.
             </p>
           </div>
         </div>

@@ -26,7 +26,7 @@ const AboutUs = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true
+      once: true,
     });
   }, []);
 
@@ -35,7 +35,7 @@ const AboutUs = () => {
       {showLoader && (
         <div
           className={`fixed w-full h-screen flex justify-center items-center bg-black z-[999] transition-opacity duration-1000 ${
-            isLoading ? 'opacity-100' : 'opacity-0'
+            isLoading ? "opacity-100" : "opacity-0"
           }`}
         >
           <Loader />
@@ -51,12 +51,12 @@ const AboutUs = () => {
           data-aos="fade-down"
           data-aos-duration="2000"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-white font-parkin">
-            About Us
+          <h1 className="text-xl md:text-4xl font-semibold text-white font-parkin uppercase">
+          Experience Unforgetable Events <br/>with Moox Events Pvt. Ltd.
           </h1>
-          <p className="text-lg md:text-xl mt-2 opacity-0 animate-fadeIn">
-            Dedicated to innovation, quality, and customer satisfaction.
-          </p>
+          {/* <p className="text-lg md:text-xl mt-2 opacity-0 animate-fadeIn">
+          Experience Unforgetable Events with Moox Events Pvt. Ltd.
+          </p> */}
         </div>
         {/* Breadcrumbs */}
         <nav className="bg-[#DBAF76] py-3 px-4 md:py-4 md:px-6">
@@ -75,21 +75,15 @@ const AboutUs = () => {
           </ol> */}
         </nav>
         {/* Description Section */}
-        <div className="w-full h-auto flex items-center justify-center py-16" data-aos="fade-down" data-aos-duration="3000">
+        <div
+          className="w-full h-auto flex items-center justify-center py-16"
+          data-aos="fade-down"
+          data-aos-duration="3000"
+        >
           <div className="text-center w-full max-w-3xl">
-            <div
-              className="w-[80%] md:w-auto text-lg text-gray-700 mx-auto leading-relaxed"
-            >
-              <p className="mb-4">
-                Moox Events Pvt. Ltd. is a Rajkot, Gujarat-based event
-                management & wedding planning company dedicated to providing
-                customers with a wide assortment of event management services
-                for all sorts of corporate and personal events.
-              </p>
-              <p>
-                Our trained and skilled event planners have the right expertise
-                to make your event more spectacular with full-time experience in
-                the event management & Wedding Planning industry.
+            <div className="w-[80%] md:w-auto text-lg text-gray-700 mx-auto leading-relaxed">
+              <p className="mb-4 text-justify">
+              At Moox Events Pvt. Ltd., we bring a fresh perspective and innovative approach to event management and wedding planning, ensuring a seamless and stress-free experience for our clients. From concept to execution, we specialize in curating bespoke events that reflect your unique style and vision, making every moment unforgettable.
               </p>
             </div>
           </div>
@@ -97,8 +91,25 @@ const AboutUs = () => {
         {/* Vision & Mission Section */}
         <VisionMission />
 
-                {/* OUT TEAM  */}
-                <div className="w-full pt-16">
+        {/* Achievements  */}
+        <div className=" w-full pt-16 pb-10">
+          <div className="text-center w-full max-w-3xl mx-auto">
+            <div
+              id="team-heading"
+              className={`text-4xl md:text-6xl font-bold text-gray-800 transform transition-all duration-1000`}
+            >
+              MOMENTS & JOURNEY
+            </div>
+
+            <div
+              className={`mt-4 w-80  mx-auto h-1 bg-gray-500 transform transition-all duration-1000 `}
+            ></div>
+          </div>
+          <AchivHome />
+        </div>
+
+        {/* OUT TEAM  */}
+        <div className="bg-white w-full pt-16">
           <div className="text-center w-full max-w-3xl mx-auto">
             {/* Our Services Heading */}
             <div
@@ -115,24 +126,7 @@ const AboutUs = () => {
           </div>
           <TeamHome />
         </div>
-        
-        {/* OUT TEAM  */}
-        {/* <div className="bg-white w-full pt-16 pb-10">
-          <div className="text-center w-full max-w-3xl mx-auto">
-            <div
-              id="team-heading"
-              className={`text-4xl md:text-6xl font-bold text-gray-800 transform transition-all duration-1000`}
-            >
-              MOMENTS & JOURNEY
-            </div>
 
-            <div
-              className={`mt-4 w-80  mx-auto h-1 bg-gray-500 transform transition-all duration-1000 `}
-            ></div>
-          </div>
-          <AchivHome />
-        </div>
- */}
         {/* ClientHome Component */}
         <div
           className="text-center text-gray-900 font-parkin text-5xl font-bold pt-16"
@@ -141,15 +135,15 @@ const AboutUs = () => {
           data-aos-delay="200" // Slight delay for the heading animation
         >
           OUR CLIENTS
-        <div
-          className={`mt-4 w-80 mx-auto h-1 bg-gray-500 transform transition-all duration-1000`}
-          data-aos="zoom-in" // Zoom-in animation for the underline
-          data-aos-duration="1000" // Duration for the underline animation
-          data-aos-delay="400" // Delay for the underline animation (after heading)
-        ></div>
-        <ClientHome onDataLoaded={handleDataLoaded} />{" "}
-        {/* Pass handleDataLoaded prop */}
-        {/* Footer Component */}
+          <div
+            className={`mt-4 w-80 mx-auto h-1 bg-gray-500 transform transition-all duration-1000`}
+            data-aos="zoom-in" // Zoom-in animation for the underline
+            data-aos-duration="1000" // Duration for the underline animation
+            data-aos-delay="400" // Delay for the underline animation (after heading)
+          ></div>
+          <ClientHome onDataLoaded={handleDataLoaded} />{" "}
+          {/* Pass handleDataLoaded prop */}
+          {/* Footer Component */}
         </div>
         <Footer />
       </div>

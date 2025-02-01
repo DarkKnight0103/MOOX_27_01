@@ -148,7 +148,7 @@ const Career = () => {
         <section className="px-6 py-12 md:px-8 md:py-16 bg-white" data-aos="fade-up" data-aos-duration="1500">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-semibold text-[#283B5C] mb-6">Why Choose Moox Events?</h2>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-justify text-gray-700">
               At Moox Events, we believe in creating unforgettable experiences. Our team is passionate about delivering high-quality events that make an impact. We offer a dynamic and supportive work environment where innovation is encouraged and creativity is celebrated. Join us and contribute to bringing exceptional events to life.
             </p>
           </div>

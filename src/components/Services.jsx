@@ -75,15 +75,11 @@ const Services = () => {
   }
 
   return (
-    <div
+    <sec
       id="services-section"
-      className="py-20 px-6 flex w-full items-center justify-center flex-col min-h-[1000px]"
+      className="py-20 px-6 flex w-full items-center justify-center flex-col min-h-fit"
     >
-      <div className="flex w-[90%] items-start justify-between flex-col md:flex-row h-full">
-        {/* Mobile Heading (visible only on mobile/tablet) */}
-        <h2 className="md:hidden text-3xl font-semibold text-moox-navy mb-8 w-full text-center">
-          Our Services
-        </h2>
+      <div className="flex w-[85%] items-start justify-between flex-col md:flex-row h-full">
 
         {/* Left Letters (hidden on mobile) */}
         <div className="hidden md:flex w-[150px] h-auto items-start">
@@ -106,11 +102,7 @@ const Services = () => {
         <div className="flex flex-col items-center justify-between w-full md:w-[90%] h-full">
           <div className="w-full md:w-[90%]">
             <p className="md:text-lg text-justify text-moox-navy mb-12 w-full text-md">
-              Our trained and skilled event planners have the right expertise to
-              make your event more spectacular. With full-time experience in the
-              event management & Wedding Planning industry, we are serving our
-              customers with the best possible services delivered at the best
-              possible rates.
+            Moox Events Pvt. Ltd. is dedicated to creating unforgettable event experiences. This is the perfect place to share more details about our approach and the range of services we offer.
             </p>
           </div>
 
@@ -177,7 +169,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </div>
+    </sec>
   );
 };
 

@@ -133,13 +133,51 @@ const Home = () => {
         <HomeSlider />
 
         {/* ABOUT US SECTION */}
+        <div className="w-full py-16">
+          <div className="md:hidden text-center w-full max-w-3xl mx-auto">
+            <div
+              id="gallery-heading"
+              className={`text-4xl md:text-6xl font-bold text-gray-800 transform transition-all duration-1000 ${
+                galleryInView ? "animate-slideInFromLeft" : "opacity-0"
+              }`}
+            >
+              ABOUT
+            </div>
+
+            <div
+              className={`mt-4 w-10 md:w-20 mx-auto h-1 bg-gray-500 transform transition-all duration-1000 ${
+                galleryInView ? "animate-widthExpand" : "opacity-0"
+              }`}
+            ></div>
+          </div>
+          {/* <GalleryHome /> */}
         <About />
+        </div>
 
         {/* OUR SERVICES SECTION */}
-        <Services />
+        <div className="w-full py-16">
+          <div className="md:hidden text-center w-full max-w-3xl mx-auto">
+            <div
+              id="gallery-heading"
+              className={`text-4xl md:text-6xl font-bold text-gray-800 transform transition-all duration-1000 ${
+                galleryInView ? "animate-slideInFromLeft" : "opacity-0"
+              }`}
+            >
+              SERVICES
+            </div>
+
+            <div
+              className={`mt-4 w-10 md:w-20 mx-auto h-1 bg-gray-500 transform transition-all duration-1000 ${
+                galleryInView ? "animate-widthExpand" : "opacity-0"
+              }`}
+            ></div>
+          </div>
+          {/* <GalleryHome /> */}
+        <Services /> 
+        </div>
 
         {/* GALLERY */}
-        <div className="w-full py-16">
+        {/* <div className="w-full py-16">
           <div className="text-center w-full max-w-3xl mx-auto">
             <div
               id="gallery-heading"
@@ -157,10 +195,10 @@ const Home = () => {
             ></div>
           </div>
           <GalleryHome />
-        </div>
+        </div> */}
 
         {/* EVENT HOME SECTION  */}
-        <div className="w-full py-16">
+        {/* <div className="w-full py-16">
           <div className="text-center w-full max-w-3xl mx-auto">
             <div
               id="event-heading"
@@ -178,10 +216,10 @@ const Home = () => {
           </div>
           <br/>
           <Blogs />
-        </div>
+        </div> */}
 
         {/* OUR ACHIVMENTS SECTION */}
-        <div className="w-full py-16">
+        {/* <div className="w-full py-16">
           <div className="text-center w-full max-w-3xl mx-auto">
             <div
               id="achiv-heading"
@@ -199,7 +237,7 @@ const Home = () => {
             ></div>
           </div>
           <AchivHome />
-        </div>
+        </div> */}
 
         {/* OUR CLIENTS  */}
         <div className="w-full py-16">

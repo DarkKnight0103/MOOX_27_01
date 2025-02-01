@@ -43,7 +43,7 @@ const BlogManagement = () => {
     if (!file) return null;
 
     const options = {
-      maxSizeMB: 0.05,
+      maxSizeMB: 0.25,
       maxWidthOrHeight: 1024,
       useWebWorker: true,
     };
